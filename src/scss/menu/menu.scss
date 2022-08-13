@@ -1,0 +1,10 @@
+@import './item';
+
+.menu {
+    display: flex;
+    justify-content: center;
+    &__list {
+        display: flex;
+        gap: 2rem;
+    }
+}

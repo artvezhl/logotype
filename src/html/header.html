@@ -1,2 +1,11 @@
-<header>
+<header class="header">
+    <div class="header__container">        
+        <img src="@img/logo.svg" class="header__logo" alt="logo">
+        <img src="@img/search.svg" class="header__search" alt="search">
+        <div class="header__mobile-menu" >
+            <input type="checkbox" name="menu">
+            <label for="menu"></label>
+        </div>
+    </div>
+    @@include('./menu/menu.html')
 </header>

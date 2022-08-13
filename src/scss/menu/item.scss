@@ -1,0 +1,70 @@
+.menu__item {
+    font-weight: 500;
+    position: relative;
+    padding: 20px 0;
+
+    ul {
+        display: none;
+        position: absolute;
+        min-width: 176px;
+        top: 56px;
+        left: 0;
+        font-size: .8rem;
+        font-weight: normal;
+        border: 1px solid $grayColor;
+        padding: 20px;
+
+        li {
+            width: 135px;
+            padding: 8px 0;
+            border-bottom: 1px solid $grayColor;
+            display: flex;
+            justify-content: space-between;
+
+            a:hover {
+                color: $grayDisactiveColor;
+                margin-left: .5rem;
+            }
+
+            &::after {
+                content: url('../img/arrow.svg');
+                display: inline-block;
+                transform: rotate(270deg);
+                cursor: pointer;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &::after {
+        content: url('../img/arrow.svg');
+        cursor: pointer;
+        margin: auto;
+
+        &:hover {
+            ul {
+                display: inherit;
+            }
+        }
+    }
+
+    &:last-child {
+        ul {
+            display: none;
+        }
+    }
+
+    &:last-child::after {
+        content: '';
+    }
+
+    
+    &:hover {
+        ul {
+            display: inherit;
+        }
+    }
+}
