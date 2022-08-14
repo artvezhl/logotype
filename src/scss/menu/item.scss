@@ -1,7 +1,7 @@
 .menu__item {
     font-weight: 500;
     position: relative;
-    padding: 20px 0;
+    padding: 1.25rem 0;
 
     ul {
         display: none;
@@ -12,11 +12,11 @@
         font-size: .8rem;
         font-weight: normal;
         border: 1px solid $grayColor;
-        padding: 20px;
+        padding: 1.25rem;
 
         li {
             width: 135px;
-            padding: 8px 0;
+            padding: .5rem 0;
             border-bottom: 1px solid $grayColor;
             display: flex;
             justify-content: space-between;
@@ -65,6 +65,16 @@
     &:hover {
         ul {
             display: inherit;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        border-bottom: 1px solid $grayColor;
+        width: 100%;
+        padding: 1rem 0;
+
+        &:last-child {
+            border-bottom: none;
         }
     }
 }

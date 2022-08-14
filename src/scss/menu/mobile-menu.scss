@@ -1,0 +1,35 @@
+.header__mobile-menu {
+    display: none;
+    opacity: 0;
+    width: 27px;
+    height: 20px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 15;
+
+    & + label {
+        display: none;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 10;
+        content: url('../img/menu.svg');
+        @media screen and (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &:checked + label {
+        content: url('../img/close.svg');
+    }
+
+    &:checked ~ .header__menu {
+         display: block;
+         top: 70px;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}

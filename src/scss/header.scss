@@ -1,10 +1,14 @@
 @import './menu/menu';
+@import './menu/mobile-menu';
 
 .header {
+    position: relative;
+
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        background: $whiteColor;
     }
 
     hr {
@@ -19,34 +23,6 @@
         position: relative;
         min-height: 82px;
         
-        .header__mobile-menu {
-            display: none;
-            position: relative;
-            margin-left: auto;
-
-            @media screen and (max-width: 768px) {
-                display: block;
-            }
-
-            label {
-                cursor: pointer;
-            }
-
-            input {
-                opacity: 0;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-
-                & + label {
-                    content: url('../img/menu.svg');
-                }
-
-                &:checked + label {
-                    content: url('../img/close.svg');
-                }
-            }
-        }
         .header__logo {
             position: absolute;
             left: calc(100%/2 - 90px);
@@ -62,6 +38,13 @@
             @media screen and (max-width: 768px) {
                 display: none;
             }
+        }
+
+        @media screen and (max-width: 768px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
         }
     }
 }
