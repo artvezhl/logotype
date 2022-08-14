@@ -1,11 +1,17 @@
 @import './item';
 
 .header__menu {
+    display: block;
     position: sticky;
     top: 0;
+    left: 0;
     transition: all 1s ease-in-out;
     width: 100%;
     background-color: $whiteColor;
+
+    &_hidden {
+        top: -100%;
+    }
 
     .menu {
         display: flex;

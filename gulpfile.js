@@ -22,6 +22,7 @@ import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { images } from './gulp/tasks/images.js';
 import { ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
+import { js } from './gulp/tasks/js.js';
 
 // Наблюдатель за измнениями файлов
 function watcher() {
@@ -29,6 +30,7 @@ function watcher() {
     gulp.watch(path.watch.html, html); // gulp.series(html, ftp) вместо html - для каждой задачи для деплоя при обновлении
     gulp.watch(path.watch.scss, scss);
     gulp.watch(path.watch.images, images);
+    gulp.watch(path.watch.js, js);
 }
 
 // Последовательная обработка шрифтов
@@ -36,7 +38,7 @@ function watcher() {
 const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, images));
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
